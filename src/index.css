@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --shadow-color: 220deg 40% 2%;
+  --shadow-elevation-low:
+    0.3px 0.5px 0.7px hsl(var(--shadow-color) / 0.34),
+    0.4px 0.8px 1px -1.2px hsl(var(--shadow-color) / 0.34),
+    1px 2px 2.5px -2.5px hsl(var(--shadow-color) / 0.34);
+  --shadow-elevation-medium:
+    0.3px 0.5px 0.7px hsl(var(--shadow-color) / 0.36),
+    0.8px 1.6px 2px -0.8px hsl(var(--shadow-color) / 0.36),
+    2.1px 4.1px 5.2px -1.7px hsl(var(--shadow-color) / 0.36),
+    5px 10px 12.6px -2.5px hsl(var(--shadow-color) / 0.36);
+}
+
+.neumorphic {
+  background: #1a1a1a;
+  box-shadow: 8px 8px 16px #0d0d0d,
+              -8px -8px 16px #272727;
+}
+
+.neumorphic-inset {
+  background: #1a1a1a;
+  box-shadow: inset 5px 5px 10px #0d0d0d,
+              inset -5px -5px 10px #272727;
+}
+
+.neumorphic-button {
+  background: #1a1a1a;
+  box-shadow: 5px 5px 10px #0d0d0d,
+              -5px -5px 10px #272727;
+  transition: all 0.2s ease;
+}
+
+.neumorphic-button:active {
+  box-shadow: inset 5px 5px 10px #0d0d0d,
+              inset -5px -5px 10px #272727;
+}
+
+/* Dark mode styles for react-day-picker */
+.rdp {
+  --rdp-cell-size: 40px;
+  --rdp-accent-color: #3b82f6;
+  --rdp-background-color: #262626;
+  --rdp-accent-color-dark: #1e40af;
+  --rdp-background-color-dark: #171717;
+  --rdp-outline: 2px solid var(--rdp-accent-color);
+  --rdp-outline-selected: 2px solid var(--rdp-accent-color);
+  margin: 1em;
+}
+
+.rdp-day_selected, 
+.rdp-day_selected:focus-visible, 
+.rdp-day_selected:hover {
+  color: white;
+  opacity: 1;
+  background-color: var(--rdp-accent-color);
+}
+
+.rdp-button:hover:not([disabled]):not(.rdp-day_selected) {
+  background-color: var(--rdp-background-color-dark);
+}

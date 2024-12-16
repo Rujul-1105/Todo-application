@@ -1,0 +1,114 @@
+/* Theme variables */
+.theme-dark {
+  --bg-primary: #1a1a1a;
+  --bg-secondary: #262626;
+  --text-primary: #e5e7eb;
+  --text-secondary: #9ca3af;
+  --accent: #3b82f6;
+  --shadow-light: #272727;
+  --shadow-dark: #0d0d0d;
+  --calendar-day: #e5e7eb;
+  --calendar-day-hover: #374151;
+}
+
+.theme-light {
+  --bg-primary: rgba(255, 255, 255, 0.7);
+  --bg-secondary: rgba(255, 255, 255, 0.9);
+  --text-primary: #1f2937;
+  --text-secondary: #4b5563;
+  --accent: #2563eb;
+  --glass-border: rgba(255, 255, 255, 0.3);
+  --glass-shadow: rgba(0, 0, 0, 0.1);
+  --calendar-day: #1f2937;
+  --calendar-day-hover: #e5e7eb;
+  background: linear-gradient(135deg, #e2e8f0, #f8fafc);
+}
+
+/* Component styles based on theme */
+.theme-dark .neumorphic {
+  background: var(--bg-primary);
+  box-shadow: 8px 8px 16px var(--shadow-dark),
+              -8px -8px 16px var(--shadow-light);
+}
+
+.theme-dark .neumorphic-inset {
+  background: var(--bg-primary);
+  box-shadow: inset 5px 5px 10px var(--shadow-dark),
+              inset -5px -5px 10px var(--shadow-light);
+}
+
+.theme-dark .neumorphic-button {
+  background: var(--bg-primary);
+  box-shadow: 5px 5px 10px var(--shadow-dark),
+              -5px -5px 10px var(--shadow-light);
+}
+
+.theme-dark .neumorphic-button:active {
+  box-shadow: inset 5px 5px 10px var(--shadow-dark),
+              inset -5px -5px 10px var(--shadow-light);
+}
+
+.theme-light .neumorphic,
+.theme-light .neumorphic-inset,
+.theme-light .neumorphic-button {
+  background: var(--bg-primary);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 4px 6px var(--glass-shadow);
+}
+
+.theme-light .neumorphic-button:active {
+  background: var(--bg-secondary);
+  transform: translateY(1px);
+}
+
+/* Calendar styles */
+.rdp {
+  --rdp-cell-size: 40px;
+  --rdp-accent-color: var(--accent);
+  --rdp-background-color: var(--bg-secondary);
+  --rdp-accent-color-dark: var(--accent);
+  --rdp-background-color-dark: var(--bg-primary);
+  --rdp-outline: 2px solid var(--accent);
+  --rdp-outline-selected: 2px solid var(--accent);
+  margin: 1em;
+}
+
+.rdp-day {
+  color: var(--calendar-day);
+}
+
+.rdp-day_selected, 
+.rdp-day_selected:focus-visible, 
+.rdp-day_selected:hover {
+  color: white;
+  opacity: 1;
+  background-color: var(--accent);
+}
+
+.rdp-button:hover:not([disabled]):not(.rdp-day_selected) {
+  background-color: var(--calendar-day-hover);
+}
+
+.rdp-head_cell {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.rdp-nav_button {
+  color: var(--text-primary);
+}
+
+.rdp-caption_label {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+/* Transitions */
+.theme-dark,
+.theme-light,
+.neumorphic,
+.neumorphic-inset,
+.neumorphic-button {
+  transition: all 0.3s ease;
+}
